@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:redcap="https://projectredcap.org" xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 schema/odm/ODM1-3-1.xsd" ODMVersion="1.3.1" FileOID="000-00-0000" FileType="Snapshot" Description="CURSIST 247" AsOfDateTime="2021-06-24T09:16:00" CreationDateTime="2021-06-24T09:16:00" SourceSystem="REDCap" SourceSystemVersion="10.0.23">
+<Study OID="Project.CURSIST247">
+<GlobalVariables>
+	<StudyName>CURSIST 247</StudyName>
+	<StudyDescription>This file contains the metadata, events, and data for REDCap project "CURSIST 247".</StudyDescription>
+	<ProtocolName>CURSIST 247</ProtocolName>
+	<redcap:RecordAutonumberingEnabled>1</redcap:RecordAutonumberingEnabled>
+	<redcap:CustomRecordLabel></redcap:CustomRecordLabel>
+	<redcap:SecondaryUniqueField></redcap:SecondaryUniqueField>
+	<redcap:SchedulingEnabled>0</redcap:SchedulingEnabled>
+	<redcap:SurveysEnabled>1</redcap:SurveysEnabled>
+	<redcap:SurveyInvitationEmailField>email</redcap:SurveyInvitationEmailField>
+	<redcap:Purpose>0</redcap:Purpose>
+	<redcap:PurposeOther></redcap:PurposeOther>
+	<redcap:ProjectNotes>Project notes</redcap:ProjectNotes>
+	<redcap:MissingDataCodes></redcap:MissingDataCodes>
+	<redcap:RepeatingInstrumentsAndEvents>
+		<redcap:RepeatingInstruments>
+		</redcap:RepeatingInstruments>
+	</redcap:RepeatingInstrumentsAndEvents>
+</GlobalVariables>
+<MetaDataVersion OID="Metadata.CURSIST247_2021-06-24_0916" Name="CURSIST 247" redcap:RecordIdField="record_id">
+	<FormDef OID="Form.test_field_types" Name="Test field types" Repeating="No" redcap:FormName="test_field_types">
+		<ItemGroupRef ItemGroupOID="test_field_types.record_id" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.textbox_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.textbox_2" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.height" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.weight" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.mc_drop_single_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.mc_radio_single_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.yn_2" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.notes_choc_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.sig_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.file_up_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.slider_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.video_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.test_field_types_complete" Mandatory="No"/>
+	</FormDef>
+	<ItemGroupDef OID="test_field_types.record_id" Name="Test field types" Repeating="No">
+		<ItemRef ItemOID="record_id" Mandatory="No" redcap:Variable="record_id"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.textbox_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h1&gt;Text box (new section)&lt;/h1&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="textbox_1" Mandatory="Yes" redcap:Variable="textbox_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.textbox_2" Name="Test field types" Repeating="No">
+		<ItemRef ItemOID="textbox_2" Mandatory="No" redcap:Variable="textbox_2"/>
+		<ItemRef ItemOID="textbox_3" Mandatory="No" redcap:Variable="textbox_3"/>
+		<ItemRef ItemOID="notes_box_1" Mandatory="No" redcap:Variable="notes_box_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.height" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Calculation&lt;/h2&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="height" Mandatory="Yes" redcap:Variable="height"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.weight" Name="Test field types" Repeating="No">
+		<ItemRef ItemOID="weight" Mandatory="Yes" redcap:Variable="weight"/>
+		<ItemRef ItemOID="calc_bmi" Mandatory="No" redcap:Variable="calc_bmi"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.mc_drop_single_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Multiple choice&lt;/h2&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="mc_drop_single_1" Mandatory="No" redcap:Variable="mc_drop_single_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.mc_radio_single_1" Name="Test field types" Repeating="No">
+		<ItemRef ItemOID="mc_radio_single_1" Mandatory="No" redcap:Variable="mc_radio_single_1"/>
+		<ItemRef ItemOID="cb_multiple_1___1" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___2" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___3" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___4" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___5" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___6" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___7" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___8" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.yn_2" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;yes/no or true/false&lt;/h3&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="yn_2" Mandatory="No" redcap:Variable="yn_2"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.notes_choc_1" Name="Test field types" Repeating="No">
+		<ItemRef ItemOID="notes_choc_1" Mandatory="No" redcap:Variable="notes_choc_1"/>
+		<ItemRef ItemOID="yn_1" Mandatory="No" redcap:Variable="yn_1"/>
+		<ItemRef ItemOID="b_1" Mandatory="No" redcap:Variable="b_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.sig_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Signature&lt;/h2&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="sig_1" Mandatory="No" redcap:Variable="sig_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.file_up_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;File upload&lt;/h3&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="file_up_1" Mandatory="No" redcap:Variable="file_up_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.slider_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;Slider&lt;/h3&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="slider_1" Mandatory="No" redcap:Variable="slider_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.video_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;Embed video&lt;/h3&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="video_1" Mandatory="No" redcap:Variable="video_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.test_field_types_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="test_field_types_complete" Mandatory="No" redcap:Variable="test_field_types_complete"/>
+	</ItemGroupDef>
+	<ItemDef OID="record_id" Name="record_id" DataType="text" Length="999" redcap:Variable="record_id" redcap:FieldType="text">
+		<Question><TranslatedText>Record ID</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="textbox_1" Name="textbox_1" DataType="text" Length="999" redcap:Variable="textbox_1" redcap:FieldType="text" redcap:FieldNote="Field note" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h1&gt;Text box (new section)&lt;/h1&gt;&lt;/div&gt;" redcap:RequiredField="y" redcap:CustomAlignment="RH">
+		<Question><TranslatedText>First Text Box (TEXT) without Validation but is required, not considered as an Identifier</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="textbox_2" Name="textbox_2" DataType="date" Length="999" redcap:Variable="textbox_2" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Give birthday between 1950 and 1999" redcap:Identifier="y" redcap:CustomAlignment="RH">
+		<Question><TranslatedText>Text box with validation (Date (D-M-Y) min (01-01-1950) max (01-01-2000) set as identifier</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>1950-01-01</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (1950-01-01 - 2000-01-01). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>2000-01-01</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (1950-01-01 - 2000-01-01). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="textbox_3" Name="textbox_3" DataType="text" Length="999" redcap:Variable="textbox_3" redcap:FieldType="text" redcap:FieldNote="NCIT ontology" redcap:OntologySearch="BIOPORTAL:NCIT">
+		<Question><TranslatedText>Text box with ontology service &#039;BioPortal Ontology Service&#039;  NCIT - National Cancer Institute Thesaurus</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="notes_box_1" Name="notes_box_1" DataType="text" Length="999" redcap:Variable="notes_box_1" redcap:FieldType="textarea" redcap:FieldNote="You can enter a long piece of text here.." redcap:CustomAlignment="RH">
+		<Question><TranslatedText>Notes Box Some markup can be done</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Notes Box&lt;/h2&gt; &lt;p&gt;Some &lt;span style=&quot;font-weight: normal;&quot;&gt;markup&lt;/span&gt; can &lt;em&gt;be&lt;/em&gt; &lt;a href=&quot;https://molgenis.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;done&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="height" Name="height" DataType="integer" Length="999" redcap:Variable="height" redcap:FieldType="text" redcap:TextValidationType="int" redcap:FieldNote="Height in cm" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Calculation&lt;/h2&gt;&lt;/div&gt;" redcap:RequiredField="y">
+		<Question><TranslatedText>Height</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>50</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (50 - 220). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>220</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (50 - 220). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="weight" Name="weight" DataType="integer" Length="999" redcap:Variable="weight" redcap:FieldType="text" redcap:TextValidationType="int" redcap:FieldNote="Weight in kg" redcap:RequiredField="y">
+		<Question><TranslatedText>Weight</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>20</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (20 - 250). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>250</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (20 - 250). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="calc_bmi" Name="calc_bmi" DataType="float" Length="999" redcap:Variable="calc_bmi" redcap:FieldType="calc" redcap:FieldNote="BMI calculated field" redcap:Calculation="round([weight]*10000/([height]*[height]),2)" redcap:BranchingLogic="[weight] &lt; 250 and [weight] &gt; 20">
+		<Question><TranslatedText>BMI</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mc_drop_single_1" Name="mc_drop_single_1" DataType="text" Length="1" redcap:Variable="mc_drop_single_1" redcap:FieldType="select" redcap:FieldNote="Select your favorite" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Multiple choice&lt;/h2&gt;&lt;/div&gt;">
+		<Question><TranslatedText>Multiple Choice Drop Down list (single answer)</TranslatedText></Question>
+		<CodeListRef CodeListOID="mc_drop_single_1.choices"/>
+	</ItemDef>
+	<ItemDef OID="mc_radio_single_1" Name="mc_radio_single_1" DataType="text" Length="1" redcap:Variable="mc_radio_single_1" redcap:FieldType="radio" redcap:FieldNote="Just pick one..">
+		<Question><TranslatedText>Multiple Choice Radio Buttons (single answer)</TranslatedText></Question>
+		<CodeListRef CodeListOID="mc_radio_single_1.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___1" Name="cb_multiple_1___1" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___2" Name="cb_multiple_1___2" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___3" Name="cb_multiple_1___3" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___4" Name="cb_multiple_1___4" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___5" Name="cb_multiple_1___5" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___6" Name="cb_multiple_1___6" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___7" Name="cb_multiple_1___7" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___7.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___8" Name="cb_multiple_1___8" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___8.choices"/>
+	</ItemDef>
+	<ItemDef OID="yn_2" Name="yn_2" DataType="boolean" Length="1" redcap:Variable="yn_2" redcap:FieldType="yesno" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;yes/no or true/false&lt;/h3&gt;&lt;/div&gt;">
+		<Question><TranslatedText>Do you like chocolate?</TranslatedText></Question>
+		<CodeListRef CodeListOID="yn_2.choices"/>
+	</ItemDef>
+	<ItemDef OID="notes_choc_1" Name="notes_choc_1" DataType="text" Length="999" redcap:Variable="notes_choc_1" redcap:FieldType="textarea" redcap:BranchingLogic="[yn_2] = &#039;0&#039;">
+		<Question><TranslatedText>Why not?</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="yn_1" Name="yn_1" DataType="boolean" Length="1" redcap:Variable="yn_1" redcap:FieldType="yesno">
+		<Question><TranslatedText>Is this form easy to answer?</TranslatedText></Question>
+		<CodeListRef CodeListOID="yn_1.choices"/>
+	</ItemDef>
+	<ItemDef OID="b_1" Name="b_1" DataType="boolean" Length="1" redcap:Variable="b_1" redcap:FieldType="truefalse" redcap:FieldNote="Select one...">
+		<Question><TranslatedText>True of False?</TranslatedText></Question>
+		<CodeListRef CodeListOID="b_1.choices"/>
+	</ItemDef>
+	<ItemDef OID="sig_1" Name="sig_1" DataType="text" Length="999" redcap:Variable="sig_1" redcap:FieldType="file" redcap:TextValidationType="signature" redcap:FieldNote="draw signature with mouse or finger" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Signature&lt;/h2&gt;&lt;/div&gt;" redcap:Identifier="y">
+		<Question><TranslatedText>Signature</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="file_up_1" Name="file_up_1" DataType="text" Length="999" redcap:Variable="file_up_1" redcap:FieldType="file" redcap:FieldNote="pick a file to upload" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;File upload&lt;/h3&gt;&lt;/div&gt;">
+		<Question><TranslatedText>File upload</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="slider_1" Name="slider_1" DataType="integer" Length="999" redcap:Variable="slider_1" redcap:FieldType="slider" redcap:TextValidationType="number" redcap:SliderLabels="low | medium | high" redcap:FieldNote="Pick a value between 0 and 100" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;Slider&lt;/h3&gt;&lt;/div&gt;" redcap:CustomAlignment="RH">
+		<Question><TranslatedText>Slider</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="video_1" Name="video_1" DataType="text" Length="999" redcap:Variable="video_1" redcap:FieldType="descriptive" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;Embed video&lt;/h3&gt;&lt;/div&gt;" redcap:VideoUrl="https://youtu.be/n28iGckSOz0" redcap:VideoDisplayInline="0">
+		<Question><TranslatedText>Descriptive Text (with optional Image/Video/Audio/ File Attachment)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="test_field_types_complete" Name="test_field_types_complete" DataType="text" Length="1" redcap:Variable="test_field_types_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="test_field_types_complete.choices"/>
+	</ItemDef>
+	<CodeList OID="mc_drop_single_1.choices" Name="mc_drop_single_1" DataType="text" redcap:Variable="mc_drop_single_1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Apple</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Pear</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Windows ME</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>Warm socks</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mc_radio_single_1.choices" Name="mc_radio_single_1" DataType="text" redcap:Variable="mc_radio_single_1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Harry Groter</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Harry Kleiner</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Harrie Potter</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>Harry Potter</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>Barry Stotter</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___1.choices" Name="cb_multiple_1___1" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___2.choices" Name="cb_multiple_1___2" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___3.choices" Name="cb_multiple_1___3" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___4.choices" Name="cb_multiple_1___4" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___5.choices" Name="cb_multiple_1___5" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___6.choices" Name="cb_multiple_1___6" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___7.choices" Name="cb_multiple_1___7" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___8.choices" Name="cb_multiple_1___8" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="yn_2.choices" Name="yn_2" DataType="boolean" redcap:Variable="yn_2">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="yn_1.choices" Name="yn_1" DataType="boolean" redcap:Variable="yn_1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="b_1.choices" Name="b_1" DataType="boolean" redcap:Variable="b_1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>True</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>False</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="test_field_types_complete.choices" Name="test_field_types_complete" DataType="text" redcap:Variable="test_field_types_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+</MetaDataVersion>
+</Study>
+<ClinicalData StudyOID="Project.CURSIST247" MetaDataVersionOID="Metadata.CURSIST247_2021-06-24_0916">
+	<SubjectData SubjectKey="1" redcap:RecordIdField="record_id">
+			<FormData FormOID="Form.test_field_types" FormRepeatKey="1">
+				<ItemGroupData ItemGroupOID="test_field_types.record_id" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="record_id" Value="1"/>
+					<ItemData ItemOID="cb_multiple_1___1" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___2" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___3" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___4" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___5" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___6" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___7" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___8" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.test_field_types_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="test_field_types_complete" Value="0"/>
+				</ItemGroupData>
+			</FormData>
+	</SubjectData>
+	<SubjectData SubjectKey="2" redcap:RecordIdField="record_id">
+			<FormData FormOID="Form.test_field_types" FormRepeatKey="1">
+				<ItemGroupData ItemGroupOID="test_field_types.record_id" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="record_id" Value="2"/>
+					<ItemData ItemOID="cb_multiple_1___1" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___2" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___3" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___4" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___5" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___6" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___7" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___8" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.test_field_types_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="test_field_types_complete" Value="0"/>
+				</ItemGroupData>
+			</FormData>
+	</SubjectData>
+	<SubjectData SubjectKey="3" redcap:RecordIdField="record_id">
+			<FormData FormOID="Form.test_field_types" FormRepeatKey="1">
+				<ItemGroupData ItemGroupOID="test_field_types.record_id" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="record_id" Value="3"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.textbox_1" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="textbox_1" Value="Hello world"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.textbox_2" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="textbox_2" Value="1967-11-02"/>
+					<ItemData ItemOID="textbox_3" Value="PET/CT Patient"/>
+					<ItemData ItemOID="notes_box_1" Value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in laoreet orci. Nunc faucibus tempor eros a convallis. Maecenas imperdiet sapien eu ex lacinia eleifend. Ut eu efficitur neque, suscipit suscipit nunc. Proin vulputate vehicula metus imperdiet luctus. Pellentesque in facilisis diam, vitae commodo tortor. In sapien sem, pellentesque in accumsan id, fermentum quis metus. Pellentesque gravida feugiat nisi, non ornare nisi. Curabitur velit ante, tempor eget sapien eu, finibus blandit tortor. Nunc sit amet posuere mi, et tristique libero. Sed ornare, turpis quis bibendum vulputate, lorem ante aliquam mi, non auctor mauris enim eget nibh. Sed efficitur fringilla nisi. Mauris vel lobortis mauris. Vivamus convallis, sapien et commodo elementum, magna tortor fermentum dui, non auctor ex turpis et ante.
+
+Cras erat lectus, dapibus sed odio quis, iaculis vehicula mauris. Proin sodales erat et enim fringilla, et pulvinar arcu ornare. Curabitur posuere ultrices auctor. Nulla eu euismod ante. Nullam semper, dolor et ultricies molestie, tortor lectus faucibus mauris, ac sagittis urna ipsum a eros. Donec porta, dolor vitae pretium faucibus, est lacus ullamcorper metus, vitae aliquam magna leo ut lacus. Praesent vel nisl felis. Curabitur tincidunt egestas dignissim. Ut consequat vestibulum metus, at mollis augue sodales eget. Mauris tristique nisi interdum nisi fringilla, id tempus neque mollis. Nullam volutpat dui non sodales congue. Maecenas dignissim, velit et venenatis molestie, nibh lectus congue ex, et facilisis erat eros nec felis. Proin vitae elit non erat aliquam egestas. Quisque tempor augue diam, sit amet suscipit dui aliquet quis. Nulla vitae aliquam purus. Nulla eu pretium arcu. Phasellus aliquet.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in laoreet orci. Nunc faucibus tempor eros a convallis. Maecenas imperdiet sapien eu ex lacinia eleifend. Ut eu efficitur neque, suscipit suscipit nunc. Proin vulputate vehicula metus imperdiet luctus. Pellentesque in facilisis diam, vitae commodo tortor. In sapien sem, pellentesque in accumsan id, fermentum quis metus. Pellentesque gravida feugiat nisi, non ornare nisi. Curabitur velit ante, tempor eget sapien eu, finibus blandit tortor. Nunc sit amet posuere mi, et tristique libero. Sed ornare, turpis quis bibendum vulputate, lorem ante aliquam mi, non auctor mauris enim eget nibh. Sed efficitur fringilla nisi. Mauris vel lobortis mauris. Vivamus convallis, sapien et commodo elementum, magna tortor fermentum dui, non auctor ex turpis et ante.
+
+Cras erat lectus, dapibus sed odio quis, iaculis vehicula mauris. Proin sodales erat et enim fringilla, et pulvinar arcu ornare. Curabitur posuere ultrices auctor. Nulla eu euismod ante. Nullam semper, dolor et ultricies molestie, tortor lectus faucibus mauris, ac sagittis urna ipsum a eros. Donec porta, dolor vitae pretium faucibus, est lacus ullamcorper metus, vitae aliquam magna leo ut lacus. Praesent vel nisl felis. Curabitur tincidunt egestas dignissim. Ut consequat vestibulum metus, at mollis augue sodales eget. Mauris tristique nisi interdum nisi fringilla, id tempus neque mollis. Nullam volutpat dui non sodales congue. Maecenas dignissim, velit et venenatis molestie, nibh lectus congue ex, et facilisis erat eros nec felis. Proin vitae elit non erat aliquam egestas. Quisque tempor augue diam, sit amet suscipit dui aliquet quis. Nulla vitae aliquam purus. Nulla eu pretium arcu. Phasellus aliquet."/>
+					<ItemData ItemOID="cb_multiple_1___1" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___2" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___3" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___4" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___5" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___6" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___7" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___8" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.test_field_types_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="test_field_types_complete" Value="0"/>
+				</ItemGroupData>
+			</FormData>
+	</SubjectData>
+	<SubjectData SubjectKey="4" redcap:RecordIdField="record_id">
+			<FormData FormOID="Form.test_field_types" FormRepeatKey="1">
+				<ItemGroupData ItemGroupOID="test_field_types.record_id" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="record_id" Value="4"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.textbox_1" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="textbox_1" Value="Some notes"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.textbox_2" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="textbox_2" Value="1965-05-05"/>
+					<ItemData ItemOID="textbox_3" Value="PET Scanner 3D Mode"/>
+					<ItemData ItemOID="notes_box_1" Value="Some Shakespeare"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.height" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="height" Value="186"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.weight" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="weight" Value="65"/>
+					<ItemData ItemOID="calc_bmi" Value="18.79"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.mc_drop_single_1" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="mc_drop_single_1" Value="4"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.mc_radio_single_1" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="mc_radio_single_1" Value="4"/>
+					<ItemData ItemOID="cb_multiple_1___1" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___2" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___3" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___4" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___5" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___6" Value="1"/>
+					<ItemData ItemOID="cb_multiple_1___7" Value="1"/>
+					<ItemData ItemOID="cb_multiple_1___8" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.yn_2" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="yn_2" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.notes_choc_1" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="notes_choc_1" Value="I like dropjes"/>
+					<ItemData ItemOID="yn_1" Value="1"/>
+					<ItemData ItemOID="b_1" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.sig_1" ItemGroupRepeatKey="1">
+					<ItemDataBase64Binary ItemOID="sig_1" redcap:DocName="signature_2021-06-21_1642.png" redcap:MimeType="image/png"><![CDATA[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]]></ItemDataBase64Binary>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.file_up_1" ItemGroupRepeatKey="1">
+					<ItemDataBase64Binary ItemOID="file_up_1" redcap:DocName="central" redcap:MimeType="application/x-empty"><![CDATA[]]></ItemDataBase64Binary>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.slider_1" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="slider_1" Value="68"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.test_field_types_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="test_field_types_complete" Value="1"/>
+				</ItemGroupData>
+			</FormData>
+	</SubjectData>
+</ClinicalData>
+</ODM>

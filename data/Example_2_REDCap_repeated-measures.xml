@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:redcap="https://projectredcap.org" xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 schema/odm/ODM1-3-1.xsd" ODMVersion="1.3.1" FileOID="000-00-0000" FileType="Snapshot" Description="CURSIST 247" AsOfDateTime="2021-07-07T13:33:22" CreationDateTime="2021-07-07T13:33:22" SourceSystem="REDCap" SourceSystemVersion="10.0.23">
+<Study OID="Project.CURSIST247">
+<GlobalVariables>
+	<StudyName>CURSIST 247</StudyName>
+	<StudyDescription>This file contains the metadata, events, and data for REDCap project "CURSIST 247".</StudyDescription>
+	<ProtocolName>CURSIST 247</ProtocolName>
+	<redcap:RecordAutonumberingEnabled>1</redcap:RecordAutonumberingEnabled>
+	<redcap:CustomRecordLabel></redcap:CustomRecordLabel>
+	<redcap:SecondaryUniqueField></redcap:SecondaryUniqueField>
+	<redcap:SchedulingEnabled>0</redcap:SchedulingEnabled>
+	<redcap:SurveysEnabled>1</redcap:SurveysEnabled>
+	<redcap:SurveyInvitationEmailField>email</redcap:SurveyInvitationEmailField>
+	<redcap:Purpose>0</redcap:Purpose>
+	<redcap:PurposeOther></redcap:PurposeOther>
+	<redcap:ProjectNotes>Project notes</redcap:ProjectNotes>
+	<redcap:MissingDataCodes></redcap:MissingDataCodes>
+	<redcap:RepeatingInstrumentsAndEvents>
+		<redcap:RepeatingInstruments>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="repeated_instrumen_arm_1" redcap:RepeatInstrument="repeated_instrument" redcap:CustomLabel=""/>
+		</redcap:RepeatingInstruments>
+	</redcap:RepeatingInstrumentsAndEvents>
+</GlobalVariables>
+<MetaDataVersion OID="Metadata.CURSIST247_2021-07-07_1333" Name="CURSIST 247" redcap:RecordIdField="record_id">
+	<Protocol>
+		<StudyEventRef StudyEventOID="Event.baseline_arm_1" OrderNumber="1" Mandatory="No"/>
+		<StudyEventRef StudyEventOID="Event.repeated_instrumen_arm_1" OrderNumber="2" Mandatory="No"/>
+		<StudyEventRef StudyEventOID="Event.last_visit_arm_1" OrderNumber="3" Mandatory="No"/>
+	</Protocol>
+	<StudyEventDef OID="Event.baseline_arm_1" Name="Baseline" Type="Common" Repeating="No" redcap:EventName="Baseline" redcap:CustomEventLabel="" redcap:UniqueEventName="baseline_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="1" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.test_field_types" OrderNumber="1" Mandatory="No" redcap:FormName="test_field_types"/>
+	</StudyEventDef>
+	<StudyEventDef OID="Event.repeated_instrumen_arm_1" Name="Repeated Instrument" Type="Common" Repeating="No" redcap:EventName="Repeated Instrument" redcap:CustomEventLabel="" redcap:UniqueEventName="repeated_instrumen_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="2" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.repeated_instrument" OrderNumber="1" Mandatory="No" redcap:FormName="repeated_instrument"/>
+	</StudyEventDef>
+	<StudyEventDef OID="Event.last_visit_arm_1" Name="Last Visit" Type="Common" Repeating="No" redcap:EventName="Last Visit" redcap:CustomEventLabel="" redcap:UniqueEventName="last_visit_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="3" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.text_box_datatypes" OrderNumber="1" Mandatory="No" redcap:FormName="text_box_datatypes"/>
+	</StudyEventDef>
+	<FormDef OID="Form.test_field_types" Name="Test field types" Repeating="No" redcap:FormName="test_field_types">
+		<ItemGroupRef ItemGroupOID="test_field_types.record_id" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.textbox_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.textbox_2" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.height" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.weight" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.mc_drop_single_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.mc_radio_single_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.yn_2" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.notes_choc_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.sig_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.file_up_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.slider_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.video_1" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="test_field_types.test_field_types_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.repeated_instrument" Name="Repeated Instrument" Repeating="No" redcap:FormName="repeated_instrument">
+		<ItemGroupRef ItemGroupOID="repeated_instrument.y_3" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="repeated_instrument.repeated_instrument_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.text_box_datatypes" Name="Text Box DataTypes" Repeating="No" redcap:FormName="text_box_datatypes">
+		<ItemGroupRef ItemGroupOID="text_box_datatypes.text_none" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="text_box_datatypes.text_box_datatypes_complete" Mandatory="No"/>
+	</FormDef>
+	<ItemGroupDef OID="test_field_types.record_id" Name="Test field types" Repeating="No">
+		<ItemRef ItemOID="record_id" Mandatory="No" redcap:Variable="record_id"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.textbox_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h1&gt;Text box (new section)&lt;/h1&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="textbox_1" Mandatory="Yes" redcap:Variable="textbox_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.textbox_2" Name="Test field types" Repeating="No">
+		<ItemRef ItemOID="textbox_2" Mandatory="No" redcap:Variable="textbox_2"/>
+		<ItemRef ItemOID="textbox_3" Mandatory="No" redcap:Variable="textbox_3"/>
+		<ItemRef ItemOID="notes_box_1" Mandatory="No" redcap:Variable="notes_box_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.height" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Calculation&lt;/h2&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="height" Mandatory="Yes" redcap:Variable="height"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.weight" Name="Test field types" Repeating="No">
+		<ItemRef ItemOID="weight" Mandatory="Yes" redcap:Variable="weight"/>
+		<ItemRef ItemOID="calc_bmi" Mandatory="No" redcap:Variable="calc_bmi"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.mc_drop_single_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Multiple choice&lt;/h2&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="mc_drop_single_1" Mandatory="No" redcap:Variable="mc_drop_single_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.mc_radio_single_1" Name="Test field types" Repeating="No">
+		<ItemRef ItemOID="mc_radio_single_1" Mandatory="No" redcap:Variable="mc_radio_single_1"/>
+		<ItemRef ItemOID="cb_multiple_1___1" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___2" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___3" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___4" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___5" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___6" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___7" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+		<ItemRef ItemOID="cb_multiple_1___8" Mandatory="No" redcap:Variable="cb_multiple_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.yn_2" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;yes/no or true/false&lt;/h3&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="yn_2" Mandatory="No" redcap:Variable="yn_2"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.notes_choc_1" Name="Test field types" Repeating="No">
+		<ItemRef ItemOID="notes_choc_1" Mandatory="No" redcap:Variable="notes_choc_1"/>
+		<ItemRef ItemOID="yn_1" Mandatory="No" redcap:Variable="yn_1"/>
+		<ItemRef ItemOID="b_1" Mandatory="No" redcap:Variable="b_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.sig_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Signature&lt;/h2&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="sig_1" Mandatory="No" redcap:Variable="sig_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.file_up_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;File upload&lt;/h3&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="file_up_1" Mandatory="No" redcap:Variable="file_up_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.slider_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;Slider&lt;/h3&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="slider_1" Mandatory="No" redcap:Variable="slider_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.video_1" Name="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;Embed video&lt;/h3&gt;&lt;/div&gt;" Repeating="No">
+		<ItemRef ItemOID="video_1" Mandatory="No" redcap:Variable="video_1"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="test_field_types.test_field_types_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="test_field_types_complete" Mandatory="No" redcap:Variable="test_field_types_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="repeated_instrument.y_3" Name="Repeated Instrument" Repeating="No">
+		<ItemRef ItemOID="y_3" Mandatory="Yes" redcap:Variable="y_3"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="repeated_instrument.repeated_instrument_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="repeated_instrument_complete" Mandatory="No" redcap:Variable="repeated_instrument_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="text_box_datatypes.text_none" Name="Text Box DataTypes" Repeating="No">
+		<ItemRef ItemOID="text_none" Mandatory="No" redcap:Variable="text_none"/>
+		<ItemRef ItemOID="text_date_d_m_y" Mandatory="No" redcap:Variable="text_date_d_m_y"/>
+		<ItemRef ItemOID="text_date_m_d_y" Mandatory="No" redcap:Variable="text_date_m_d_y"/>
+		<ItemRef ItemOID="text_date_y_m_d" Mandatory="No" redcap:Variable="text_date_y_m_d"/>
+		<ItemRef ItemOID="text_datetime_d_m_y_h_m" Mandatory="No" redcap:Variable="text_datetime_d_m_y_h_m"/>
+		<ItemRef ItemOID="text_datetime_m_d_y_h_m" Mandatory="No" redcap:Variable="text_datetime_m_d_y_h_m"/>
+		<ItemRef ItemOID="text_datetime_y_m_d_h_m" Mandatory="No" redcap:Variable="text_datetime_y_m_d_h_m"/>
+		<ItemRef ItemOID="text_email" Mandatory="No" redcap:Variable="text_email"/>
+		<ItemRef ItemOID="text_integer" Mandatory="No" redcap:Variable="text_integer"/>
+		<ItemRef ItemOID="text_letter_only" Mandatory="No" redcap:Variable="text_letter_only"/>
+		<ItemRef ItemOID="text_number" Mandatory="No" redcap:Variable="text_number"/>
+		<ItemRef ItemOID="text_n1_comma" Mandatory="No" redcap:Variable="text_n1_comma"/>
+		<ItemRef ItemOID="text_n1" Mandatory="No" redcap:Variable="text_n1"/>
+		<ItemRef ItemOID="text_n2_comma" Mandatory="No" redcap:Variable="text_n2_comma"/>
+		<ItemRef ItemOID="text_n2" Mandatory="No" redcap:Variable="text_n2"/>
+		<ItemRef ItemOID="text_n_comma" Mandatory="No" redcap:Variable="text_n_comma"/>
+		<ItemRef ItemOID="text_phone" Mandatory="No" redcap:Variable="text_phone"/>
+		<ItemRef ItemOID="text_study_code" Mandatory="No" redcap:Variable="text_study_code"/>
+		<ItemRef ItemOID="text_time" Mandatory="No" redcap:Variable="text_time"/>
+		<ItemRef ItemOID="text_time_2" Mandatory="No" redcap:Variable="text_time_2"/>
+		<ItemRef ItemOID="text_zip" Mandatory="No" redcap:Variable="text_zip"/>
+		<ItemRef ItemOID="text_datetime_w1" Mandatory="No" redcap:Variable="text_datetime_w1"/>
+		<ItemRef ItemOID="text_datetime_w2" Mandatory="No" redcap:Variable="text_datetime_w2"/>
+		<ItemRef ItemOID="text_datetime_w3" Mandatory="No" redcap:Variable="text_datetime_w3"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="text_box_datatypes.text_box_datatypes_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="text_box_datatypes_complete" Mandatory="No" redcap:Variable="text_box_datatypes_complete"/>
+	</ItemGroupDef>
+	<ItemDef OID="record_id" Name="record_id" DataType="text" Length="999" redcap:Variable="record_id" redcap:FieldType="text">
+		<Question><TranslatedText>Record ID</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="textbox_1" Name="textbox_1" DataType="text" Length="999" redcap:Variable="textbox_1" redcap:FieldType="text" redcap:FieldNote="Field note" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h1&gt;Text box (new section)&lt;/h1&gt;&lt;/div&gt;" redcap:RequiredField="y" redcap:CustomAlignment="RH">
+		<Question><TranslatedText>First Text Box (TEXT) without Validation but is required, not considered as an Identifier</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="textbox_2" Name="textbox_2" DataType="date" Length="999" redcap:Variable="textbox_2" redcap:FieldType="text" redcap:TextValidationType="date_dmy" redcap:FieldNote="Give birthday between 1950 and 1999" redcap:Identifier="y" redcap:CustomAlignment="RH">
+		<Question><TranslatedText>Text box with validation (Date (D-M-Y) min (01-01-1950) max (01-01-2000) set as identifier</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>1950-01-01</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (1950-01-01 - 2000-01-01). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>2000-01-01</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (1950-01-01 - 2000-01-01). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="textbox_3" Name="textbox_3" DataType="text" Length="999" redcap:Variable="textbox_3" redcap:FieldType="text" redcap:FieldNote="NCIT ontology" redcap:OntologySearch="BIOPORTAL:NCIT">
+		<Question><TranslatedText>Text box with ontology service &#039;BioPortal Ontology Service&#039;  NCIT - National Cancer Institute Thesaurus</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="notes_box_1" Name="notes_box_1" DataType="text" Length="999" redcap:Variable="notes_box_1" redcap:FieldType="textarea" redcap:FieldNote="You can enter a long piece of text here.." redcap:CustomAlignment="RH">
+		<Question><TranslatedText>Notes Box Some markup can be done</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Notes Box&lt;/h2&gt; &lt;p&gt;Some &lt;span style=&quot;font-weight: normal;&quot;&gt;markup&lt;/span&gt; can &lt;em&gt;be&lt;/em&gt; &lt;a href=&quot;https://molgenis.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;done&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="height" Name="height" DataType="integer" Length="999" redcap:Variable="height" redcap:FieldType="text" redcap:TextValidationType="int" redcap:FieldNote="Height in cm" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Calculation&lt;/h2&gt;&lt;/div&gt;" redcap:RequiredField="y">
+		<Question><TranslatedText>Height</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>50</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (50 - 220). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>220</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (50 - 220). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="weight" Name="weight" DataType="integer" Length="999" redcap:Variable="weight" redcap:FieldType="text" redcap:TextValidationType="int" redcap:FieldNote="Weight in kg" redcap:RequiredField="y">
+		<Question><TranslatedText>Weight</TranslatedText></Question>
+		<RangeCheck Comparator="GE" SoftHard="Soft">
+			<CheckValue>20</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (20 - 250). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+		<RangeCheck Comparator="LE" SoftHard="Soft">
+			<CheckValue>250</CheckValue>
+			<ErrorMessage><TranslatedText>The value you provided is outside the suggested range. (20 - 250). This value is admissible, but you may wish to double check it.</TranslatedText></ErrorMessage>
+		</RangeCheck>
+	</ItemDef>
+	<ItemDef OID="calc_bmi" Name="calc_bmi" DataType="float" Length="999" redcap:Variable="calc_bmi" redcap:FieldType="calc" redcap:FieldNote="BMI calculated field" redcap:Calculation="round([weight]*10000/([height]*[height]),2)" redcap:BranchingLogic="[weight] &lt; 250 and [weight] &gt; 20">
+		<Question><TranslatedText>BMI</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="mc_drop_single_1" Name="mc_drop_single_1" DataType="text" Length="1" redcap:Variable="mc_drop_single_1" redcap:FieldType="select" redcap:FieldNote="Select your favorite" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Multiple choice&lt;/h2&gt;&lt;/div&gt;">
+		<Question><TranslatedText>Multiple Choice Drop Down list (single answer)</TranslatedText></Question>
+		<CodeListRef CodeListOID="mc_drop_single_1.choices"/>
+	</ItemDef>
+	<ItemDef OID="mc_radio_single_1" Name="mc_radio_single_1" DataType="text" Length="1" redcap:Variable="mc_radio_single_1" redcap:FieldType="radio" redcap:FieldNote="Just pick one..">
+		<Question><TranslatedText>Multiple Choice Radio Buttons (single answer)</TranslatedText></Question>
+		<CodeListRef CodeListOID="mc_radio_single_1.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___1" Name="cb_multiple_1___1" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___1.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___2" Name="cb_multiple_1___2" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___2.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___3" Name="cb_multiple_1___3" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___3.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___4" Name="cb_multiple_1___4" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___4.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___5" Name="cb_multiple_1___5" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___5.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___6" Name="cb_multiple_1___6" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___6.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___7" Name="cb_multiple_1___7" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___7.choices"/>
+	</ItemDef>
+	<ItemDef OID="cb_multiple_1___8" Name="cb_multiple_1___8" DataType="boolean" Length="1" redcap:Variable="cb_multiple_1" redcap:FieldType="checkbox" redcap:FieldNote="Ik ga op vakantie en neem mee..">
+		<Question><TranslatedText>Checkboxes (multiple answers)</TranslatedText><redcap:FormattedTranslatedText>&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;p&gt;Checkboxes (multiple answers)&lt;/p&gt;&lt;/div&gt;</redcap:FormattedTranslatedText></Question>
+		<CodeListRef CodeListOID="cb_multiple_1___8.choices"/>
+	</ItemDef>
+	<ItemDef OID="yn_2" Name="yn_2" DataType="boolean" Length="1" redcap:Variable="yn_2" redcap:FieldType="yesno" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;yes/no or true/false&lt;/h3&gt;&lt;/div&gt;">
+		<Question><TranslatedText>Do you like chocolate?</TranslatedText></Question>
+		<CodeListRef CodeListOID="yn_2.choices"/>
+	</ItemDef>
+	<ItemDef OID="notes_choc_1" Name="notes_choc_1" DataType="text" Length="999" redcap:Variable="notes_choc_1" redcap:FieldType="textarea" redcap:BranchingLogic="[yn_2] = &#039;0&#039;">
+		<Question><TranslatedText>Why not?</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="yn_1" Name="yn_1" DataType="boolean" Length="1" redcap:Variable="yn_1" redcap:FieldType="yesno">
+		<Question><TranslatedText>Is this form easy to answer?</TranslatedText></Question>
+		<CodeListRef CodeListOID="yn_1.choices"/>
+	</ItemDef>
+	<ItemDef OID="b_1" Name="b_1" DataType="boolean" Length="1" redcap:Variable="b_1" redcap:FieldType="truefalse" redcap:FieldNote="Select one...">
+		<Question><TranslatedText>True of False?</TranslatedText></Question>
+		<CodeListRef CodeListOID="b_1.choices"/>
+	</ItemDef>
+	<ItemDef OID="sig_1" Name="sig_1" DataType="text" Length="999" redcap:Variable="sig_1" redcap:FieldType="file" redcap:TextValidationType="signature" redcap:FieldNote="draw signature with mouse or finger" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h2&gt;Signature&lt;/h2&gt;&lt;/div&gt;" redcap:Identifier="y">
+		<Question><TranslatedText>Signature</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="file_up_1" Name="file_up_1" DataType="text" Length="999" redcap:Variable="file_up_1" redcap:FieldType="file" redcap:FieldNote="pick a file to upload" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;File upload&lt;/h3&gt;&lt;/div&gt;">
+		<Question><TranslatedText>File upload</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="slider_1" Name="slider_1" DataType="integer" Length="999" redcap:Variable="slider_1" redcap:FieldType="slider" redcap:TextValidationType="number" redcap:SliderLabels="low | medium | high" redcap:FieldNote="Pick a value between 0 and 100" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;Slider&lt;/h3&gt;&lt;/div&gt;" redcap:CustomAlignment="RH">
+		<Question><TranslatedText>Slider</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="video_1" Name="video_1" DataType="text" Length="999" redcap:Variable="video_1" redcap:FieldType="descriptive" redcap:SectionHeader="&lt;div class=&quot;rich-text-field-label&quot;&gt;&lt;h3&gt;Embed video&lt;/h3&gt;&lt;/div&gt;" redcap:VideoUrl="https://youtu.be/n28iGckSOz0" redcap:VideoDisplayInline="0">
+		<Question><TranslatedText>Descriptive Text (with optional Image/Video/Audio/ File Attachment)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="test_field_types_complete" Name="test_field_types_complete" DataType="text" Length="1" redcap:Variable="test_field_types_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="test_field_types_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="y_3" Name="y_3" DataType="boolean" Length="1" redcap:Variable="y_3" redcap:FieldType="yesno" redcap:RequiredField="y">
+		<Question><TranslatedText>Make a choice</TranslatedText></Question>
+		<CodeListRef CodeListOID="y_3.choices"/>
+	</ItemDef>
+	<ItemDef OID="repeated_instrument_complete" Name="repeated_instrument_complete" DataType="text" Length="1" redcap:Variable="repeated_instrument_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="repeated_instrument_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="text_none" Name="text_none" DataType="text" Length="999" redcap:Variable="text_none" redcap:FieldType="text">
+		<Question><TranslatedText>fieldtype none</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_date_d_m_y" Name="text_date_d_m_y" DataType="date" Length="999" redcap:Variable="text_date_d_m_y" redcap:FieldType="text" redcap:TextValidationType="date_dmy">
+		<Question><TranslatedText>fieldtype Date (D-M-Y)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_date_m_d_y" Name="text_date_m_d_y" DataType="date" Length="999" redcap:Variable="text_date_m_d_y" redcap:FieldType="text" redcap:TextValidationType="date_mdy">
+		<Question><TranslatedText>fieldtype Date (M-D-Y)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_date_y_m_d" Name="text_date_y_m_d" DataType="date" Length="999" redcap:Variable="text_date_y_m_d" redcap:FieldType="text" redcap:TextValidationType="date_ymd">
+		<Question><TranslatedText>fieldtype Date (Y-M-D)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_datetime_d_m_y_h_m" Name="text_datetime_d_m_y_h_m" DataType="partialDatetime" Length="999" redcap:Variable="text_datetime_d_m_y_h_m" redcap:FieldType="text" redcap:TextValidationType="datetime_dmy">
+		<Question><TranslatedText>fieldtype Datetime (D-M-Y H:M)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_datetime_m_d_y_h_m" Name="text_datetime_m_d_y_h_m" DataType="partialDatetime" Length="999" redcap:Variable="text_datetime_m_d_y_h_m" redcap:FieldType="text" redcap:TextValidationType="datetime_mdy">
+		<Question><TranslatedText>fieldtype Datetime (M-D-Y H:M)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_datetime_y_m_d_h_m" Name="text_datetime_y_m_d_h_m" DataType="partialDatetime" Length="999" redcap:Variable="text_datetime_y_m_d_h_m" redcap:FieldType="text" redcap:TextValidationType="datetime_ymd">
+		<Question><TranslatedText>fieldtype Datetime (Y-M-D H:M)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_email" Name="text_email" DataType="text" Length="999" redcap:Variable="text_email" redcap:FieldType="text" redcap:TextValidationType="email">
+		<Question><TranslatedText>fieldtype email</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_integer" Name="text_integer" DataType="integer" Length="999" redcap:Variable="text_integer" redcap:FieldType="text" redcap:TextValidationType="int">
+		<Question><TranslatedText>fieldtype Integer</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_letter_only" Name="text_letter_only" DataType="text" Length="999" redcap:Variable="text_letter_only" redcap:FieldType="text" redcap:TextValidationType="alpha_only">
+		<Question><TranslatedText>fieldtype Letters only</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_number" Name="text_number" DataType="float" Length="999" SignificantDigits="1" redcap:Variable="text_number" redcap:FieldType="text" redcap:TextValidationType="float">
+		<Question><TranslatedText>fieldtype Number</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_n1_comma" Name="text_n1_comma" DataType="text" Length="999" redcap:Variable="text_n1_comma" redcap:FieldType="text" redcap:TextValidationType="number_1dp_comma_decimal">
+		<Question><TranslatedText>fieldtype Number (1 decimal place - comma as decimal)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_n1" Name="text_n1" DataType="float" Length="999" redcap:Variable="text_n1" redcap:FieldType="text" redcap:TextValidationType="number_1dp">
+		<Question><TranslatedText>fieldtype Number (1 decimal place)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_n2_comma" Name="text_n2_comma" DataType="text" Length="999" redcap:Variable="text_n2_comma" redcap:FieldType="text" redcap:TextValidationType="number_2dp_comma_decimal">
+		<Question><TranslatedText>fieldtype Number (2 decimal places - comma as decimal)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_n2" Name="text_n2" DataType="float" Length="999" redcap:Variable="text_n2" redcap:FieldType="text" redcap:TextValidationType="number_2dp">
+		<Question><TranslatedText>fieldtype Number (2 decimal places)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_n_comma" Name="text_n_comma" DataType="text" Length="999" redcap:Variable="text_n_comma" redcap:FieldType="text" redcap:TextValidationType="number_comma_decimal">
+		<Question><TranslatedText>fieldtype Number (comma as decimal)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_phone" Name="text_phone" DataType="text" Length="999" redcap:Variable="text_phone" redcap:FieldType="text" redcap:TextValidationType="phone">
+		<Question><TranslatedText>fieldtype Phone (North America)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_study_code" Name="text_study_code" DataType="text" Length="999" redcap:Variable="text_study_code" redcap:FieldType="text" redcap:TextValidationType="studycode5">
+		<Question><TranslatedText>fieldtype study code (5)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_time" Name="text_time" DataType="partialTime" Length="999" redcap:Variable="text_time" redcap:FieldType="text" redcap:TextValidationType="time">
+		<Question><TranslatedText>fieldtype Time (HH:MM)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_time_2" Name="text_time_2" DataType="text" Length="999" redcap:Variable="text_time_2" redcap:FieldType="text" redcap:TextValidationType="time_mm_ss">
+		<Question><TranslatedText>fieldtype Time (MM:SS)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_zip" Name="text_zip" DataType="text" Length="999" redcap:Variable="text_zip" redcap:FieldType="text" redcap:TextValidationType="zipcode">
+		<Question><TranslatedText>fieldtype Zipcode (U.S.)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_datetime_w1" Name="text_datetime_w1" DataType="datetime" Length="999" redcap:Variable="text_datetime_w1" redcap:FieldType="text" redcap:TextValidationType="datetime_seconds_dmy">
+		<Question><TranslatedText>fieldtype Datetime w/ seconds (D-M-Y H:M:S)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_datetime_w2" Name="text_datetime_w2" DataType="datetime" Length="999" redcap:Variable="text_datetime_w2" redcap:FieldType="text" redcap:TextValidationType="datetime_seconds_mdy">
+		<Question><TranslatedText>fieldtype Datetime w/ seconds (M-D-Y H:M:S)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_datetime_w3" Name="text_datetime_w3" DataType="datetime" Length="999" redcap:Variable="text_datetime_w3" redcap:FieldType="text" redcap:TextValidationType="datetime_seconds_ymd">
+		<Question><TranslatedText>fieldtype Datetime w/ seconds (Y-M-D H:M:S)</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="text_box_datatypes_complete" Name="text_box_datatypes_complete" DataType="text" Length="1" redcap:Variable="text_box_datatypes_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="text_box_datatypes_complete.choices"/>
+	</ItemDef>
+	<CodeList OID="mc_drop_single_1.choices" Name="mc_drop_single_1" DataType="text" redcap:Variable="mc_drop_single_1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Apple</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Pear</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Windows ME</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>Warm socks</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="mc_radio_single_1.choices" Name="mc_radio_single_1" DataType="text" redcap:Variable="mc_radio_single_1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Harry Groter</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Harry Kleiner</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Harrie Potter</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>Harry Potter</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>Barry Stotter</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___1.choices" Name="cb_multiple_1___1" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___2.choices" Name="cb_multiple_1___2" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___3.choices" Name="cb_multiple_1___3" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___4.choices" Name="cb_multiple_1___4" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___5.choices" Name="cb_multiple_1___5" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___6.choices" Name="cb_multiple_1___6" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___7.choices" Name="cb_multiple_1___7" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="cb_multiple_1___8.choices" Name="cb_multiple_1___8" DataType="boolean" redcap:Variable="cb_multiple_1" redcap:CheckboxChoices="1, Tandenborstel | 2, Onderbroeken | 3, Zwembroek | 4, Paspoort | 5, Kinderen | 6, Tante Annie | 7, EHBO kit | 8, Slippers">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Checked</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Unchecked</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="yn_2.choices" Name="yn_2" DataType="boolean" redcap:Variable="yn_2">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="yn_1.choices" Name="yn_1" DataType="boolean" redcap:Variable="yn_1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="b_1.choices" Name="b_1" DataType="boolean" redcap:Variable="b_1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>True</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>False</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="test_field_types_complete.choices" Name="test_field_types_complete" DataType="text" redcap:Variable="test_field_types_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="y_3.choices" Name="y_3" DataType="boolean" redcap:Variable="y_3">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="repeated_instrument_complete.choices" Name="repeated_instrument_complete" DataType="text" redcap:Variable="repeated_instrument_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="text_box_datatypes_complete.choices" Name="text_box_datatypes_complete" DataType="text" redcap:Variable="text_box_datatypes_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+</MetaDataVersion>
+</Study>
+<ClinicalData StudyOID="Project.CURSIST247" MetaDataVersionOID="Metadata.CURSIST247_2021-07-07_1333">
+	<SubjectData SubjectKey="1" redcap:RecordIdField="record_id">
+		<StudyEventData StudyEventOID="Event.baseline_arm_1" StudyEventRepeatKey="1" redcap:UniqueEventName="baseline_arm_1">
+			<FormData FormOID="Form.test_field_types" FormRepeatKey="1">
+				<ItemGroupData ItemGroupOID="test_field_types.record_id" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="record_id" Value="1"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.textbox_1" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="textbox_1" Value="Text"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.height" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="height" Value="154"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.weight" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="weight" Value="45"/>
+					<ItemData ItemOID="calc_bmi" Value="18.97"/>
+					<ItemData ItemOID="cb_multiple_1___1" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___2" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___3" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___4" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___5" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___6" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___7" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___8" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.test_field_types_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="test_field_types_complete" Value="0"/>
+				</ItemGroupData>
+			</FormData>
+		</StudyEventData>
+		<StudyEventData StudyEventOID="Event.last_visit_arm_1" StudyEventRepeatKey="1" redcap:UniqueEventName="last_visit_arm_1">
+			<FormData FormOID="Form.text_box_datatypes" FormRepeatKey="1">
+				<ItemGroupData ItemGroupOID="" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="text_date_d_m_y" Value="2021-07-07"/>
+					<ItemData ItemOID="text_date_m_d_y" Value="2021-07-07"/>
+					<ItemData ItemOID="text_date_y_m_d" Value="2021-07-07"/>
+					<ItemData ItemOID="text_datetime_d_m_y_h_m" Value="2021-07-07T13:29"/>
+					<ItemData ItemOID="text_datetime_m_d_y_h_m" Value="2021-07-07T13:29"/>
+					<ItemData ItemOID="text_datetime_y_m_d_h_m" Value="2021-07-07T13:29"/>
+					<ItemData ItemOID="text_time" Value="13:29"/>
+					<ItemData ItemOID="text_datetime_w1" Value="2021-07-07T13:29:55"/>
+					<ItemData ItemOID="text_datetime_w2" Value="2021-07-07T13:29:54"/>
+					<ItemData ItemOID="text_datetime_w3" Value="2021-07-07T13:29:52"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="text_box_datatypes.text_box_datatypes_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="text_box_datatypes_complete" Value="0"/>
+				</ItemGroupData>
+			</FormData>
+		</StudyEventData>
+		<StudyEventData StudyEventOID="Event.repeated_instrumen_arm_1" StudyEventRepeatKey="1" redcap:UniqueEventName="repeated_instrumen_arm_1">
+			<FormData FormOID="Form.repeated_instrument" FormRepeatKey="1">
+				<ItemGroupData ItemGroupOID="repeated_instrument.y_3" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="y_3" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="repeated_instrument.repeated_instrument_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="repeated_instrument_complete" Value="2"/>
+				</ItemGroupData>
+			</FormData>
+			<FormData FormOID="Form.repeated_instrument" FormRepeatKey="2">
+				<ItemGroupData ItemGroupOID="repeated_instrument.y_3" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="y_3" Value="1"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="repeated_instrument.repeated_instrument_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="repeated_instrument_complete" Value="2"/>
+				</ItemGroupData>
+			</FormData>
+			<FormData FormOID="Form.repeated_instrument" FormRepeatKey="3">
+				<ItemGroupData ItemGroupOID="repeated_instrument.y_3" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="y_3" Value="1"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="repeated_instrument.repeated_instrument_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="repeated_instrument_complete" Value="2"/>
+				</ItemGroupData>
+			</FormData>
+			<FormData FormOID="Form.repeated_instrument" FormRepeatKey="4">
+				<ItemGroupData ItemGroupOID="repeated_instrument.y_3" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="y_3" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="repeated_instrument.repeated_instrument_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="repeated_instrument_complete" Value="1"/>
+				</ItemGroupData>
+			</FormData>
+		</StudyEventData>
+	</SubjectData>
+	<SubjectData SubjectKey="2" redcap:RecordIdField="record_id">
+		<StudyEventData StudyEventOID="Event.baseline_arm_1" StudyEventRepeatKey="1" redcap:UniqueEventName="baseline_arm_1">
+			<FormData FormOID="Form.test_field_types" FormRepeatKey="1">
+				<ItemGroupData ItemGroupOID="test_field_types.record_id" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="record_id" Value="2"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.textbox_1" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="textbox_1" Value="Hello"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.height" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="height" Value="180"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.weight" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="weight" Value="78"/>
+					<ItemData ItemOID="calc_bmi" Value="24.07"/>
+					<ItemData ItemOID="cb_multiple_1___1" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___2" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___3" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___4" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___5" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___6" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___7" Value="0"/>
+					<ItemData ItemOID="cb_multiple_1___8" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="test_field_types.test_field_types_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="test_field_types_complete" Value="2"/>
+				</ItemGroupData>
+			</FormData>
+		</StudyEventData>
+		<StudyEventData StudyEventOID="Event.last_visit_arm_1" StudyEventRepeatKey="1" redcap:UniqueEventName="last_visit_arm_1">
+			<FormData FormOID="Form.text_box_datatypes" FormRepeatKey="1">
+				<ItemGroupData ItemGroupOID="" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="text_date_d_m_y" Value="2021-07-07"/>
+					<ItemData ItemOID="text_date_m_d_y" Value="2021-07-07"/>
+					<ItemData ItemOID="text_date_y_m_d" Value="2021-07-07"/>
+					<ItemData ItemOID="text_datetime_d_m_y_h_m" Value="2021-07-07T13:31"/>
+					<ItemData ItemOID="text_datetime_m_d_y_h_m" Value="2021-07-07T13:31"/>
+					<ItemData ItemOID="text_datetime_y_m_d_h_m" Value="2021-07-07T13:31"/>
+					<ItemData ItemOID="text_time" Value="13:31"/>
+					<ItemData ItemOID="text_datetime_w1" Value="2021-07-07T13:31:47"/>
+					<ItemData ItemOID="text_datetime_w2" Value="2021-07-07T13:31:48"/>
+					<ItemData ItemOID="text_datetime_w3" Value="2021-07-07T13:31:50"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="text_box_datatypes.text_box_datatypes_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="text_box_datatypes_complete" Value="2"/>
+				</ItemGroupData>
+			</FormData>
+		</StudyEventData>
+		<StudyEventData StudyEventOID="Event.repeated_instrumen_arm_1" StudyEventRepeatKey="1" redcap:UniqueEventName="repeated_instrumen_arm_1">
+			<FormData FormOID="Form.repeated_instrument" FormRepeatKey="1">
+				<ItemGroupData ItemGroupOID="repeated_instrument.y_3" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="y_3" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="repeated_instrument.repeated_instrument_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="repeated_instrument_complete" Value="2"/>
+				</ItemGroupData>
+			</FormData>
+			<FormData FormOID="Form.repeated_instrument" FormRepeatKey="2">
+				<ItemGroupData ItemGroupOID="repeated_instrument.y_3" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="y_3" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="repeated_instrument.repeated_instrument_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="repeated_instrument_complete" Value="2"/>
+				</ItemGroupData>
+			</FormData>
+			<FormData FormOID="Form.repeated_instrument" FormRepeatKey="3">
+				<ItemGroupData ItemGroupOID="repeated_instrument.y_3" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="y_3" Value="1"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="repeated_instrument.repeated_instrument_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="repeated_instrument_complete" Value="2"/>
+				</ItemGroupData>
+			</FormData>
+			<FormData FormOID="Form.repeated_instrument" FormRepeatKey="4">
+				<ItemGroupData ItemGroupOID="repeated_instrument.y_3" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="y_3" Value="0"/>
+				</ItemGroupData>
+				<ItemGroupData ItemGroupOID="repeated_instrument.repeated_instrument_complete" ItemGroupRepeatKey="1">
+					<ItemData ItemOID="repeated_instrument_complete" Value="2"/>
+				</ItemGroupData>
+			</FormData>
+		</StudyEventData>
+	</SubjectData>
+</ClinicalData>
+</ODM>
