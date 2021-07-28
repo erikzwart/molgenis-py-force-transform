@@ -36,7 +36,8 @@ class Transform:
             # add SubjectKey as key 1
             df = df.append({'tableName': FormName, 'columnName': 'SubjectKey', 'columnType': '', 'key': '1', 'required': 'TRUE'}, ignore_index=True)
             # add FormRepeatKey
-            df = df.append({'tableName': FormName, 'columnName': 'FormRepeatKey', 'columnType': '', 'key': '2', 'required': 'TRUE'}, ignore_index=True)
+            #df = df.append({'tableName': FormName, 'columnName': 'FormRepeatKey', 'columnType': '', 'key': '2', 'required': 'TRUE'}, ignore_index=True)
+            df = df.append({'tableName': FormName, 'columnName': 'FormRepeatKey', 'columnType': '', 'key': '', 'required': ''}, ignore_index=True)
             for ItemGroupDefOID in ItemGroupDefOIDs:
                 if re.search(FormName, ItemGroupDefOID):
 
@@ -102,7 +103,6 @@ class Transform:
         df = df.drop(columns=['DataType','FieldType','TextValidationType'])
         df = df.fillna('')
         df.to_csv(r'./data/output/molgenis.csv', index=False, header=True)
-        #return df
 
     def molgenisTable(self, doc):
         """Build and output table data if ClinicalData is available"""
@@ -151,20 +151,16 @@ class Transform:
         data = pd.DataFrame([], index=index, columns=columns)
         #print(data)
 
-        for SubjectKey in SubjectKeys:
-            #print('SubjectKey: ', SubjectKey)
-
-            SubjectData = Redcap.iterfind(doc, ".//odm:SubjectData[@SubjectKey='"+SubjectKey+"']/")
-            # loopdylooploop
-            for i in SubjectData:
-                for j in i:
-                    for k in j:
-                        for l in k:
-                            #print('SubjectKey: ', SubjectKey, ' FormRepeatKey: ', j.attrib['FormRepeatKey'], ' ', end='')
-                            #print(j.attrib['FormOID'], ' ', end='')
-                            #print(l.attrib['ItemOID'], ' ', l.attrib['Value'])
-                            
-                            data.loc[(SubjectKey,j.attrib['FormRepeatKey']),([j.attrib['FormOID']],[l.attrib['ItemOID']])] = l.attrib['Value']
+        # determine if repeated measurments are used
+        StudyEventData = Redcap.attributes(doc, './/odm:StudyEventData')
+        
+        try:
+            if StudyEventData == None:
+                # No repeated instruments found, get data
+                data = self.clinicalData(SubjectKeys, doc, data)
+        except ValueError:
+            # Repeated instruments, get data
+            data = self.clinicalDataRepeats(SubjectKeys, doc, data)
 
         for i in forms.index:
             name = forms['tableName'][i]
@@ -173,7 +169,40 @@ class Transform:
             copyData = self.transformRedcapBool(copyData)
             self.dataCsv(copyData, name)
 
-    
+    def clinicalData(self, SubjectKeys, doc, data):
+        """Retrieve clinicalData from study without repeated measurements"""
+        for SubjectKey in SubjectKeys:
+
+            SubjectData = Redcap.iterfind(doc, ".//odm:SubjectData[@SubjectKey='"+SubjectKey+"']/")
+
+            for i in SubjectData:
+                    for j in i:
+                        for k in j:
+                            try:
+                                data.loc[(SubjectKey,i.attrib['FormRepeatKey']),
+                                    ([i.attrib['FormOID']],[k.attrib['ItemOID']])] = k.attrib['Value']
+                            except KeyError:
+                                # in case of images or files a value attribute does not exists
+                                # TODO
+                                # images/files
+                                data.loc[(SubjectKey,i.attrib['FormRepeatKey']),
+                                    ([i.attrib['FormOID']],[k.attrib['ItemOID']])] = ''
+        return data
+
+    def clinicalDataRepeats(self, SubjectKeys, doc, data):
+        """Retrieve clinicalData from study with repeated measurements"""
+        for SubjectKey in SubjectKeys:
+
+            SubjectData = Redcap.iterfind(doc, ".//odm:SubjectData[@SubjectKey='"+SubjectKey+"']/")
+
+            for i in SubjectData:
+                for j in i:
+                    for k in j:
+                        for l in k:
+                            data.loc[(SubjectKey,j.attrib['FormRepeatKey']),
+                                ([j.attrib['FormOID']],[l.attrib['ItemOID']])] = l.attrib['Value']
+        return data
+
     def transformRedcapBool(self, data):
         """Transform REDCap bool (0/1) to EMX2 TRUE/FALSE"""
         da = data.copy()
@@ -183,7 +212,10 @@ class Transform:
         for c in columns:
             # check if variable (c) is defined as boolean and truefalse
             try:
-                row = df.loc[(df['DataType'] == 'boolean') & (df['FieldType'] == 'truefalse') & (df['columnName'] == c)]
+                row = df.loc[(df['DataType'] == 'boolean') 
+                    & (df['FieldType'] == 'truefalse') 
+                    & (df['columnName'] == c)]
+                    
                 if row.index.notnull():
                     da[c] = da[c].replace(['0'],'FALSE')
                     da[c] = da[c].replace(['1'],'TRUE')
@@ -191,7 +223,10 @@ class Transform:
                 pass
             # check if variable (c) is defined as boolean and yesno
             try:
-                row = df.loc[(df['DataType'] == 'boolean') & (df['FieldType'] == 'yesno') & (df['columnName'] == c)]
+                row = df.loc[(df['DataType'] == 'boolean') 
+                    & (df['FieldType'] == 'yesno') 
+                    & (df['columnName'] == c)]
+
                 if row.index.notnull():
                     da[c] = da[c].replace(['0'],'FALSE')
                     da[c] = da[c].replace(['1'],'TRUE')       
@@ -202,7 +237,8 @@ class Transform:
 
     def dataCsv(self, df, instrumentName):
         """Transform DataFrame and write 'data'.csv"""
-        # drop columns SubjectKey and FormRepeatKey they are empty and replaced by multiindex (SubjectKey and FormRepeatKey)
+        # drop columns SubjectKey and FormRepeatKey they are empty 
+        # and replaced by multiindex (SubjectKey and FormRepeatKey).
         df = df.drop(['SubjectKey'], axis=1)
         df = df.drop(['FormRepeatKey'], axis=1)
         # drop NaN

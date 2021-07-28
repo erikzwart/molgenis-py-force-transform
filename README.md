@@ -23,7 +23,7 @@ Minimum output should be a *molgenis.csv* and *\<instrument\>.csv*.
 
 ### Upload to MOLGENIS EMX2
 
-~~Examples without repeated measures (or any data) should load into MOLGENIS (Example file 1,3 and 4)~~. Repeated measures (Example file 2) are transformed to EMX2 but **not** compatible yet, import into MOLGENIS will fail.
+Examples without repeated measures (or any data) should load into MOLGENIS (Example file 1,3 and 4). Repeated measures (Example file 2) are transformed to EMX2 but **not** compatible yet, import into MOLGENIS will fail.
 
 ### Issues
 
