@@ -27,7 +27,7 @@ Examples without repeated measures (or any data) should load into MOLGENIS (Exam
 
 ### Issues
 
-- data export from REDCap without repeated measures fails
+- ~~data export from REDCap without repeated measures fails~~
 - EMX Key issue
 - Collapse REDCap multiple choice to EMX TEXT
 - Add ref table to molgenis.csv
