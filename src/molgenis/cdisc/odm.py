@@ -5,18 +5,18 @@ import pandas as pd
 class Redcap:
     """Read and parse REDCap CDISC ODM"""
 
-    def __init__(self, file):
+    def __init__(self, file: str) -> None:
         """Read and extract (meta)data from REDCap CDISC ODM
         
         pass valid xml file path"""
         self.file = file
         
-        self.readParseXML(file)
+        self.read_parse_xml(file)
         self.namespace()
         
         self.namespaces = {'odm': self.namespace}
          
-    def readParseXML(self, file):
+    def read_parse_xml(self, file: str) -> ET.ElementTree:
         """Read and parse xml"""
         try:
             tree = ET.parse(file)
@@ -28,7 +28,7 @@ class Redcap:
             print('ParseError, please provide valid xml file.')
             exit
 
-    def namespace(self):
+    def namespace(self) -> str:
         """Return the namespace uri for the current file"""
         root = self.root
         try:
@@ -39,7 +39,7 @@ class Redcap:
             print('Failed to retrieve namespace.')
             exit
     
-    def attributes(self, xpath):
+    def attributes(self, xpath: str) -> pd.DataFrame:
         """Returns Pandas DataFrame of found attributes"""
         root = self.root
         columns = root.find(xpath, self.namespaces)
@@ -52,7 +52,7 @@ class Redcap:
                 df = df.append(i.attrib, ignore_index=True)
             return df
 
-    def attribute(self, xpath):
+    def attribute(self, xpath: str) -> pd.DataFrame:
         """Returns Pandas DataFrame of found attribute"""
         root = self.root
         columns = root.find(xpath, self.namespaces)
@@ -65,7 +65,7 @@ class Redcap:
             df = df.append(i.attrib, ignore_index=True)
             return df
 
-    def iterfind(self, xpath):
+    def iterfind(self, xpath: str) -> ET.ElementTree:
         """Return tree"""
         root = self.root
         return root.iterfind(xpath, self.namespaces)

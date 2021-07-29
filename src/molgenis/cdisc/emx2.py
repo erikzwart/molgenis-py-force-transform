@@ -7,13 +7,13 @@ from src.molgenis.cdisc.odm import Redcap
 class Transform:
     """Transform CDISC ODM to EMX2"""
 
-    def __init__(self, file):
+    def __init__(self, file: str) -> None:
         self.doc = Redcap(file)
 
         self.molgenis(self.doc)
-        self.molgenisTable(self.doc)
+        self.molgenis_table(self.doc)
 
-    def molgenis(self, doc):
+    def molgenis(self, doc: Redcap.__init__) -> None:
         """Make molgenis.csv"""
 
         # molgenis.csv column names
@@ -47,18 +47,16 @@ class Transform:
                         ItemDef = Redcap.attribute(doc, ".//odm:ItemDef[@OID='"+ItemOID+"']")
 
                         # See if a FieldNote is defined                        
-                        ItemDefText = np.nan
                         try:
                             ItemDefText = ItemDef['{https://projectredcap.org}FieldNote'].values[0]
                         except KeyError:
-                            pass
+                            ItemDefText = np.nan
                         
                         # See if a TextValidationType is set
-                        TextValidationType = np.nan
                         try:
                             TextValidationType = ItemDef['{https://projectredcap.org}TextValidationType'].values[0]
                         except KeyError:
-                            pass
+                            TextValidationType = np.nan
 
                         df = df.append({
                             'tableName': FormName,
@@ -69,10 +67,10 @@ class Transform:
                             'TextValidationType': TextValidationType
                         }, ignore_index=True)
 
-        self.molgenisDataFrame = self.emx2Datatype(df)
-        self.molgenisCsv(self.molgenisDataFrame)
+        self.molgenisDataFrame = self.emx2_datatype(df)
+        self.molgenis_csv(self.molgenisDataFrame)
     
-    def emx2Datatype(self, df):
+    def emx2_datatype(self, df: pd.DataFrame) -> pd.DataFrame:
         """Determine the emx2 datatype based on REDCAP DataType, FieldType and TextValidationType"""
 
         df.loc[(df['DataType'] == 'text') & (df['FieldType'] == 'text') & (df['TextValidationType'] == 'email'), 'columnType'] =  'text'
@@ -96,7 +94,7 @@ class Transform:
 
         return df
     
-    def molgenisCsv(self, df):
+    def molgenis_csv(self, df: pd.DataFrame) -> pd.DataFrame:
         """Build and output a valid molgenis.csv from Pandas DataFrame"""
 
         # remove REDCap columns DataType, FieldType and TextValidationType
@@ -104,13 +102,13 @@ class Transform:
         df = df.fillna('')
         df.to_csv(r'./data/output/molgenis.csv', index=False, header=True)
 
-    def molgenisTable(self, doc):
-        """Build and output table data if ClinicalData is available"""
-        ClinicalData = Redcap.attribute(doc, './/odm:ClinicalData')
+    def molgenis_table(self, doc: Redcap.__init__) -> None:
+        """Build and output table data if clinical_data is available"""
+        clinical_data = Redcap.attribute(doc, './/odm:ClinicalData')
         try:
-            ClinicalData['StudyOID']
+            clinical_data['StudyOID']
         except:
-            print('No ClinicalData found for this Study.')
+            print('No clinical_data found for this Study.')
             return
         
         # determine how many SubjectKey(s) there are
@@ -157,20 +155,20 @@ class Transform:
         try:
             if StudyEventData == None:
                 # No repeated instruments found, get data
-                data = self.clinicalData(SubjectKeys, doc, data)
+                data = self.clinical_data(SubjectKeys, doc, data)
         except ValueError:
             # Repeated instruments, get data
-            data = self.clinicalDataRepeats(SubjectKeys, doc, data)
+            data = self.clinical_data_repeats(SubjectKeys, doc, data)
 
         for i in forms.index:
             name = forms['tableName'][i]
             copyData = data[forms['FormOID'][i]]
             
-            copyData = self.transformRedcapBool(copyData)
-            self.dataCsv(copyData, name)
+            copyData = self.transform_redcap_boolean(copyData)
+            self.data_csv(copyData, name)
 
-    def clinicalData(self, SubjectKeys, doc, data):
-        """Retrieve clinicalData from study without repeated measurements"""
+    def clinical_data(self, SubjectKeys: np.ndarray, doc: Redcap.__init__, data: pd.DataFrame) -> pd.DataFrame:
+        """Retrieve clinicaldata from study without repeated measurements"""
         for SubjectKey in SubjectKeys:
 
             SubjectData = Redcap.iterfind(doc, ".//odm:SubjectData[@SubjectKey='"+SubjectKey+"']/")
@@ -189,8 +187,8 @@ class Transform:
                                     ([i.attrib['FormOID']],[k.attrib['ItemOID']])] = ''
         return data
 
-    def clinicalDataRepeats(self, SubjectKeys, doc, data):
-        """Retrieve clinicalData from study with repeated measurements"""
+    def clinical_data_repeats(self, SubjectKeys: np.ndarray, doc: Redcap.__init__, data: pd.DataFrame) -> pd.DataFrame:
+        """Retrieve clinicaldata from study with repeated measurements"""
         for SubjectKey in SubjectKeys:
 
             SubjectData = Redcap.iterfind(doc, ".//odm:SubjectData[@SubjectKey='"+SubjectKey+"']/")
@@ -203,39 +201,33 @@ class Transform:
                                 ([j.attrib['FormOID']],[l.attrib['ItemOID']])] = l.attrib['Value']
         return data
 
-    def transformRedcapBool(self, data):
+    def transform_redcap_boolean(self, data: pd.DataFrame) -> pd.DataFrame:
         """Transform REDCap bool (0/1) to EMX2 TRUE/FALSE"""
         da = data.copy()
         df = self.molgenisDataFrame
         columns = list(da.columns)
         # see if REDCap variable is defined as boolean
-        for c in columns:
+        for c in columns:          
             # check if variable (c) is defined as boolean and truefalse
-            try:
-                row = df.loc[(df['DataType'] == 'boolean') 
+            row = df.loc[(df['DataType'] == 'boolean') 
                     & (df['FieldType'] == 'truefalse') 
                     & (df['columnName'] == c)]
-                    
-                if row.index.notnull():
+            if row.index.notnull():
                     da[c] = da[c].replace(['0'],'FALSE')
                     da[c] = da[c].replace(['1'],'TRUE')
-            except KeyError:
-                pass
+            
             # check if variable (c) is defined as boolean and yesno
-            try:
-                row = df.loc[(df['DataType'] == 'boolean') 
+            row = df.loc[(df['DataType'] == 'boolean') 
                     & (df['FieldType'] == 'yesno') 
                     & (df['columnName'] == c)]
 
-                if row.index.notnull():
-                    da[c] = da[c].replace(['0'],'FALSE')
-                    da[c] = da[c].replace(['1'],'TRUE')       
-            except KeyError:
-                pass
-       
+            if row.index.notnull():
+                da[c] = da[c].replace(['0'],'FALSE')
+                da[c] = da[c].replace(['1'],'TRUE') 
+
         return da
 
-    def dataCsv(self, df, instrumentName):
+    def data_csv(self, df: pd.DataFrame, name: str) -> None:
         """Transform DataFrame and write 'data'.csv"""
         # drop columns SubjectKey and FormRepeatKey they are empty 
         # and replaced by multiindex (SubjectKey and FormRepeatKey).
@@ -243,4 +235,4 @@ class Transform:
         df = df.drop(['FormRepeatKey'], axis=1)
         # drop NaN
         df = df.dropna(how='all')
-        df.to_csv(r'./data/output/' + instrumentName + '.csv', index=True, header=True)
+        df.to_csv(r'./data/output/' + name + '.csv', index=True, header=True)
