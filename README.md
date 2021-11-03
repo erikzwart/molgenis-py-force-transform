@@ -14,6 +14,7 @@ Four example are included and can be found in the `data` directory:
 - Example_2_REDCap_repeated-measures.xml
 - Example_3_TestHumanCancer_REDCap.xml
 - Example_4_TestHumanCancer_data_REDCap.xml
+- Example_5_missing-clinical-data.xml
 
 ### Output files
 
@@ -23,7 +24,7 @@ Minimum output should be a *molgenis.csv* and *\<instrument\>.csv*.
 
 ### Upload to MOLGENIS EMX2
 
-Examples without repeated measures (or any data) should load into MOLGENIS (Example file 1,3 and 4). Repeated measures (Example file 2) are transformed to EMX2 but **not** compatible yet, import into MOLGENIS will fail.
+Examples without repeated measures (or any data) should load into MOLGENIS (Example file 1,3 and 4). Repeated measures (Example file 2) are transformed to EMX2 but **not** compatible yet, import into MOLGENIS will fail. Example 5 should fail.
 
 ### Issues
 
