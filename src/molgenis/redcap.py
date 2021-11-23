@@ -5,45 +5,41 @@ import sys
 from src.molgenis.cdisc import Cdisc
 from src.molgenis.emx2 import Emx2, Molgenis
 
-
 class REDCap:
     '''
 
     '''          
-    # set namespace for REDCap CDISC ODM
-    ns = '{https://projectredcap.org}'
+    ns = '{https://projectredcap.org}' # set namespace for REDCap CDISC ODM
+    path = './data/output/' # set output path
             
-    def main(self, file: str, edc: str):
+    def main(self, file: str, edc: str) -> None:
         self.doc = Cdisc(file, edc)
-        # set namespace for REDCap CDISC ODM
-        ns = REDCap.ns
-        # set output path
-        path = './data/output/'
-         # see if REDCap xml contains clinical data, if not exit
+        REDCap.__study_contains_clinicaldata(self)
+        REDCap.__study_contains_repeating_instruments(self)
+        instruments = Cdisc.attribute_values(self.doc, './/odm:FormDef', REDCap.ns + 'FormName') # retrieve the instruments defined by REDCap
+        df = REDCap.__generate_molgenis_csv(self, instruments)
+        df = REDCap.__get_clinicaldata(self, df)
+        REDCap.__generate_subjectdata(self)
+        
+
+    def __study_contains_clinicaldata(self) -> None:
+        '''see if REDCap xml contains clinical data, if not exit'''
         if not Cdisc.attribute_value(self.doc, ".//odm:ClinicalData", 'StudyOID'):
             sys.exit('No ClinicalData found for this Study, exiting.')
 
-        # see if Study contains repeating instruments
-        repeatingInstrument = Cdisc.attribute_values(self.doc, ".//" + ns + "RepeatingInstrument", ns + "RepeatInstrument")
-        if not repeatingInstrument:
-            repeatingInstrument = {False}
-        else:
-            repeatingInstrument = set(repeatingInstrument)
-        
-        # retrieve the instruments defined by REDCap
-        instruments = Cdisc.attribute_values(self.doc, './/odm:FormDef', ns + 'FormName')
+    def __study_contains_repeating_instruments(self):
+        '''see if Study contains repeating instruments'''
+        i = Cdisc.attribute_values(self.doc, ".//" + REDCap.ns + "RepeatingInstrument", REDCap.ns + "RepeatInstrument")
+        return (set(i) if i else {False})
 
-        ### molgenis.csv ###
-        #
+    def __generate_molgenis_csv(self, instruments: list) -> pd.DataFrame:
+        '''setup and write molgenis.csv'''
         # create empty molgenis.csv and add columns
         # - added the following extra columns to be able to determine columnType
         #   DataType
         #   FieldType
         #   TextValidationType
         df = Molgenis.table_columns()
-
-        # append instrument (tables) to molgenis.csv
-        #df = Molgenis.instrument_table(df, instrument)
 
         # retrieve variables for each instrument (table)
         variables = Cdisc.attribute_values(self.doc, './/odm:ItemGroupDef', 'OID')
@@ -52,19 +48,17 @@ class REDCap:
             # append instrument (tables) to molgenis.csv
             df = Molgenis.instrument_table(df, instrument)
 
-
         for v in variables:
             column = Cdisc.attributes(self.doc, ".//odm:ItemGroupDef[@OID='"+ v +"']/")
             
             instrument = v.split('.')
             instrument = instrument[0]
 
-
             for c in column['ItemOID']:
                 description = Cdisc.attribute_value(
                     self.doc, 
                     ".//odm:ItemDef[@OID='"+ c +"']", 
-                    ns + 'FieldNote'
+                    REDCap.ns + 'FieldNote'
                 )
                 data_type = Cdisc.attribute_value(
                     self.doc, 
@@ -74,12 +68,12 @@ class REDCap:
                 field_type = Cdisc.attribute_value(
                     self.doc, 
                     ".//odm:ItemDef[@OID='"+ c +"']", 
-                    ns + 'FieldType'
+                    REDCap.ns + 'FieldType'
                 )
                 text_validation_type = Cdisc.attribute_value(
                     self.doc, 
                     ".//odm:ItemDef[@OID='"+ c +"']",
-                    ns + 'TextValidationType'
+                    REDCap.ns + 'TextValidationType'
                 )
                 
                 data = [instrument, c, description, data_type, field_type, text_validation_type]
@@ -88,21 +82,19 @@ class REDCap:
         # Determine the emx2 datatype based on REDCAP DataType, FieldType and TextValidationType
         df = Emx2.datatype(df)
         # Transform and output a valid molgenis.csv from Pandas DataFrame
-        Molgenis.write_molgenis_csv(df, path, 'molgenis.csv')
+        Molgenis.write_molgenis_csv(df, REDCap.path, 'molgenis.csv')
+        
+        return df
 
-        ### Clinical data ###
-        #
+    def __get_clinicaldata(self, df: pd.DataFrame) -> pd.DataFrame:
+        '''Get clinical data'''
         # setup data MultiIndex DataFrame
         columns = pd.MultiIndex.from_frame(REDCap.__form_variables(self, df))
         index = pd.MultiIndex.from_product([[],[]], names=['SubjectKey','FormRepeatKey'])
         clinicalData = pd.DataFrame([], index=index, columns=columns)
-
-        # determine if repeated measurments are used
-        StudyEventData = Cdisc.attributes(self.doc, './/odm:StudyEventData')
         
-        # retrieve SubjectKeys
-        SubjectKeys = Cdisc.attribute_values(self.doc, './/odm:SubjectData', 'SubjectKey')
-
+        StudyEventData = Cdisc.attributes(self.doc, './/odm:StudyEventData') # determine if repeated measurments are used
+        SubjectKeys = Cdisc.attribute_values(self.doc, './/odm:SubjectData', 'SubjectKey') # retrieve SubjectKeys
         try:
             if StudyEventData == None:
                 # No repeated instruments found, get clinicalData
@@ -111,26 +103,25 @@ class REDCap:
             # Repeated instruments, get clinicalData
             clinicalData = REDCap.__clinical_data_repeats(self, SubjectKeys, clinicalData)
         
-        ### transform clinical data
-        # 
-        # retrieve instrument name and OID
         instruments = REDCap.__get_forms(self)
+        repeatingInstrument = REDCap.__study_contains_repeating_instruments(self)
 
         # transform clinicalData for each instrument
         for i in instruments.index:
             instrument_name = instruments['FormName'][i]
             instrument_data = clinicalData[instruments['OID'][i]]
-            
             transformed_clinicalData = REDCap.__transform_redcap_boolean(self, df, instrument_data)
-
             # see if instrument is a repeating instrument, returns bool
-            repeating = [True if i == instrument_name else False for i in repeatingInstrument][0]
-            
-            Molgenis.write_instrument_csv(transformed_clinicalData, path, instrument_name, repeating)
+            repeating = [True if i == instrument_name else False for i in repeatingInstrument][0]    
+            Molgenis.write_instrument_csv(transformed_clinicalData, REDCap.path, instrument_name, repeating)
         
-        ### SubjectData
+        return df
+    
+    def __generate_subjectdata(self) -> None:
+        '''Generate SubjectData.csv based on SubjectKeys and FormRepeatKeys'''
+        SubjectKeys = Cdisc.attribute_values(self.doc, './/odm:SubjectData', 'SubjectKey')
         FormRepeatKeys = Cdisc.attribute_values(self.doc, './/odm:FormData', 'FormRepeatKey')
-        Molgenis.subjectData_table(SubjectKeys, FormRepeatKeys, path, 'SubjectData.csv')
+        Molgenis.subjectData_table(SubjectKeys, FormRepeatKeys, REDCap.path, 'SubjectData.csv')
 
     def __transform_redcap_boolean(
         self, 

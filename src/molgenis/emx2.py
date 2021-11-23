@@ -39,7 +39,6 @@ class Molgenis:
         '''Append instrument names to molgenis.csv pandas DataFrame
         
         append instrument (tables) to molgenis.csv'''
-        print(instrument)
         # add instrument as table into molgenis
         df = df.append({'tableName': instrument}, ignore_index=True)
         # add key that is the combination of SubjectKey and FormRepeatKey
