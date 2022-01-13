@@ -21,7 +21,7 @@ Four example are included and can be found in the `data` directory:
 
 After running the script you will find the output in `data/output/`
 
-Minimum output should be a *molgenis.csv* and *\<instrument\>.csv*.
+Minimum output should be a *molgenis.csv*, *SubjectData.csv* and *\<instrument\>.csv*.
 
 ### Upload to MOLGENIS EMX2
 
@@ -31,9 +31,10 @@ Examples without repeated measures (or any data) should load into MOLGENIS (Exam
 
 - ~~data export from REDCap without repeated measures fails~~
 - ~~EMX Key issue~~
-- Collapse REDCap multiple choice to EMX TEXT
+- ~~Collapse REDCap multiple choice to EMX TEXT~~
 - ~~Add ref table to molgenis.csv, SubjectData.csv~~
 - zip output data and option to remove (cleanup) output folder
+- Transform CodeList to Variables and VariableValues
 
 ## UMCG REDCap
 
